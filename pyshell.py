@@ -7,7 +7,7 @@ with open("settings.json") as settings_file:
     pro = settings['prompt']
 cmd = ""
 
-print("Welcome To The \033[1;34;47mPyt\033[1;33;47mhon\033[0;0m Shell (aka pyshell) v1.1.0")
+print("Welcome To The \033[1;34;47mPyt\033[1;33;47mhon\033[0;0m Shell (aka PyShell) v1.1.1")
 
 while True:
     try:
@@ -15,8 +15,13 @@ while True:
     except KeyboardInterrupt:
         print("^C")
     if cmd != "exit":
-        process = subprocess.run(re.split("\s", cmd))
-        print(str(process.stdout).rstrip("\nNone"))
+        try:
+            process = subprocess.run(re.split("\s", cmd))
+            print(str(process.stdout).rstrip("\nNone"))
+        except FileNotFoundError:
+            print("\033[31mPyShell: " + cmd + ": Command Not Found\033[0m")
+        except PermissionError:
+            print("\033[31mPyShell: " + cmd + ": Access Denied\033[0m")
 
     elif cmd == "exit":
         print("Closing pyshell ...")
