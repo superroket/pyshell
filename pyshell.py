@@ -6,7 +6,7 @@ with open("settings.json") as settings_file:
     pro = settings['prompt']
 cmd = ""
 
-print("Welcome To The Python Shell (aka mrshell) v1.0.0")
+print("Welcome To The Python Shell (aka pyshell) v1.0.0")
 
 while True:
     try:
