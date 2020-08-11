@@ -1,6 +1,15 @@
 import subprocess
+import platform
 import json
 import re
+
+if platform.system() == 'Linux':
+    pass
+elif platform.system() == 'Darwin':
+    pass
+elif platform.system() == 'Windows':
+    raise Exception("OS Windows Not Soported")
+
 
 with open("settings.json") as settings_file:
     settings = json.load(settings_file)
@@ -14,6 +23,8 @@ while True:
         cmd = input(pro)
     except KeyboardInterrupt:
         print("^C")
+    except EOFError:
+        print("\033[31mPyShell: " + cmd + ": Unkown Error\033[0m")
     if cmd != "exit":
         try:
             process = subprocess.run(re.split("\s", cmd))
@@ -22,6 +33,12 @@ while True:
             print("\033[31mPyShell: " + cmd + ": Command Not Found\033[0m")
         except PermissionError:
             print("\033[31mPyShell: " + cmd + ": Access Denied\033[0m")
+        except EOFError:
+            try:
+                process = subprocess.run(re.split("\s", cmd))
+                print(str(process.stdout).rstrip("\nNone"))
+            except EOFError:
+                print("\033[31mPyShell: " + cmd + ": Unkown Error\033[0m")
 
     elif cmd == "exit":
         print("Closing pyshell ...")
