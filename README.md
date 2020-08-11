@@ -5,4 +5,4 @@ but is was hard:
 
 # Requirements
 * Your Device Needs The Latest Version Python
-* The OS Must Be Unix Based (Extra Version For Windows)[https://github.com/harsha7addanki/pyshell/tree/win]
+* The OS Must Be Unix Based [(Extra Version For Windows)](https://github.com/harsha7addanki/pyshell/tree/win)
