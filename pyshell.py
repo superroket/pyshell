@@ -50,7 +50,7 @@ while True:
             try:
                 if win == False:
                     process = subprocess.run(re.split("\s", cmd))
-                    print(str(process.stdout).rstrip("\nNone"))
+                    print(str(process.stdout).rstrip("None").rstrip("\n"))
                 else:
                     os.system(cmd)
             except EOFError:
@@ -62,7 +62,7 @@ while True:
     elif cmd == "exit":
         print("Closing pyshell ...")
         if win == False:
-            subprocess.run(["sleep","3"])
+            subprocess.run(["sleep", "3"])
             subprocess.run(["clear"])
         else:
             pass
