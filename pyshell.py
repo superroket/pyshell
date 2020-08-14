@@ -1,5 +1,6 @@
 import subprocess
 import platform
+import getpass
 import json
 import re
 import os
@@ -17,15 +18,22 @@ elif platform.system() == 'Windows':
 with open("settings.json") as settings_file:
     settings = json.load(settings_file)
     pro = settings['prompt']
+    if pro == "$PRO":
+        prodef = True
     home = settings['home']
 cmd = ""
 if win == False:
-    print("Welcome To The \033[1;34;47mPyt\033[1;33;47mhon\033[0;0m Shell (aka PyShell) v1.1.1")
+    print("Welcome To The \033[1;34;47mPyt\033[1;33;47mhon\033[0;0m Shell (aka PyShell) v1.1.1\n")
 else:
-    print("Welcome To The Python Shell (aka PyShell) v1.1.1")
+    print("Welcome To The Python Shell (aka PyShell) v1.1.1\n")
 
 os.chdir(home)
 while True:
+    if prodef:
+        if os.getcwd() == home:
+            pro = getpass.getuser() + "@" + platform.node() + ":"+ "~" + "$ "
+        else:
+            pro = getpass.getuser() + "@" + platform.node() + ":"+ os.getcwd() + "$ "
     try:
         cmd = input(pro)
     except KeyboardInterrupt:
