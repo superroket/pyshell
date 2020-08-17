@@ -23,6 +23,7 @@ with open("settings.json") as settings_file:
     home = settings['home']
 cmd = ""
 if win == False:
+    os.system("clear")
     print("Welcome To The \033[1;34;47mPyt\033[1;33;47mhon\033[0;0m Shell (aka PyShell) v1.1.1\n")
 else:
     print("Welcome To The Python Shell (aka PyShell) v1.1.1\n")
