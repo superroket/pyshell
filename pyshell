@@ -1,9 +1,5 @@
 #!/bin/sh
 
-export 0=pyshell
-
 python3 pyshell.py
-
-export 0=sh
 
 exit 0
