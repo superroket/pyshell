@@ -6,6 +6,7 @@ import re
 import os
 
 win = False
+prodef = False
 
 if platform.system() == 'Linux':
     pass
