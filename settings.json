@@ -1,5 +1,4 @@
 {
   "prompt":"$PRO",
-  //Sorry Windows Users this Was First Built For Linux Just Replace4 "/home" With "/c:/Users/USERNAME_HERE"
   "home":"/home"
 }
