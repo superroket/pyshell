@@ -25,9 +25,9 @@ with open("settings.json") as settings_file:
 cmd = ""
 if win == False:
     os.system("clear")
-    print("Welcome To The \033[1;34;47mPyt\033[1;33;47mhon\033[0;0m Shell (aka PyShell) v1.1.1\n")
+    print("Welcome To The \033[1;34;47mPyt\033[1;33;47mhon\033[0;0m Shell v1.1.1\n")
 else:
-    print("Welcome To The Python Shell (aka PyShell) v1.1.1\n")
+    print("Welcome To The Python Shell v1.1.1\n")
 
 os.chdir(home)
 while True:
