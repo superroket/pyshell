@@ -27,6 +27,7 @@ if win == False:
     os.system("clear")
     print("Welcome To The \033[1;34;47mPyt\033[1;33;47mhon\033[0;0m Shell v1.1.1\n")
 else:
+    os.system("cls")
     print("Welcome To The Python Shell v1.1.1\n")
 
 os.chdir(home)
@@ -84,5 +85,6 @@ while True:
             subprocess.run(["sleep", "3"])
             subprocess.run(["clear"])
         else:
-            pass
+            os.system("TIMEOUT /T 3")
+            os.system("CLS")
         exit()
