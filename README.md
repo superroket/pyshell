@@ -17,6 +17,9 @@ run `psh-inst.py`:
 
 linux:
 ```bash
+pip3 install tkinter
+pip3 install tk
+pip3 install ttk
 python3 psh-inst.py
 ```
 windows:
@@ -27,3 +30,4 @@ mac:
 ```bash
 python psh-inst.py
 ```
+
