@@ -41,7 +41,7 @@ while True:
 		print("^C")
 	except EOFError:
 		if win == False:
-			print("\33[31mPyShell: " + cmd + ": Unkown Error\003[0m")
+			print("\33[31mPyShell: " + cmd + ": Unkown Error\033[0m")
 		else:
 			print("PyShell: " + cmd + ": Unkown Error")
 	if cmd != "exit":
@@ -54,10 +54,10 @@ while True:
 					os.system(cmd)
 			except FileNotFoundError:
 				if win == False:
-					print("\33[31mPyShell: " + cmd + ": Command Not Found\003[0m")
+					print("\33[31mPyShell: " + cmd + ": Command Not Found\033[0m")
 			except PermissionError:
 				if win == False:
-					print("\33[31mPyShell: " + cmd + ": Access Denied\003[0m")
+					print("\33[31mPyShell: " + cmd + ": Access Denied\033[0m")
 			except EOFError:
 				try:
 					if win == False:
