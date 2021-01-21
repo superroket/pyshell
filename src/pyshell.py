@@ -21,7 +21,7 @@ with open("settings.json") as settings_file:
 cmd = ""
 if win == False:
 	os.system("clear")
-	print("Welcome To The \33[34mPyt\33[93mhon\033[0m Shell v1.1.1")
+	print("Welcome To The \33[34mPyt\33[93mhon\033[0m Shell v1.2.2")
 else:
 	os.system("cls")
 	print("Welcome To The Python Shell v1.1.1")
