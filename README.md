@@ -5,6 +5,8 @@ but is was hard:
 
 # Requirements
 * Your Device Needs The Latest Version Python
+* Tkinter Is Needed On Linux
+* Tk And TTk
 
 # How To Install
 
