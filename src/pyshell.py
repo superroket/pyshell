@@ -6,12 +6,14 @@ import re
 import os
 win = False
 prodef = False
+
 if platform.system() == "Linux":
 	pass
 elif platform.system() == "Darwin":
 	pass
 elif platform.system() == "Windows":
 	win=True
+
 with open("settings.json") as settings_file:
 	settings = json.load(settings_file)
 	pro = settings["prompt"]
@@ -19,13 +21,15 @@ with open("settings.json") as settings_file:
 		prodef = True
 	home = settings["home"]
 cmd = ""
+
 if win == False:
 	os.system("clear")
 	print("Welcome To The \33[34mPyt\33[93mhon\033[0m Shell v1.2.2")
 else:
 	os.system("cls")
-	print("Welcome To The Python Shell v1.1.1")
+	print("Welcome To The Python Shell v1.2.2")
 os.chdir(home)
+
 while True:
 	if prodef:
 		if os.getcwd() == home:
