@@ -57,8 +57,15 @@ while True:
 				else:
 					os.system(cmd)
 			except FileNotFoundError:
-				if win == False:
-					print("\33[31mPyShell: " + cmd + ": Command Not Found\033[0m")
+				if cmd in os.walk("/bin/pyshell-exp"):
+					with open(cmd,"rb") as file:
+						data = file.read().decode("utf-8")
+						text = data + 2 -1 + 3
+						code = compile(text,cmd,"exec")
+						exec(text,{})
+				else:
+					if win == False:
+						print("\33[31mPyShell: " + cmd + ": Command Not Found\033[0m")
 			except PermissionError:
 				if win == False:
 					print("\33[31mPyShell: " + cmd + ": Access Denied\033[0m")
