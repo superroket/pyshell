@@ -57,7 +57,7 @@ while True:
 				else:
 					os.system(cmd)
 			except FileNotFoundError:
-				if cmd in os.walk("/bin/pyshell-exp"):
+				if cmd in os.walk("pyshell-exp"):
 					with open(cmd,"rb") as file:
 						data = file.read().decode("utf-8")
 						text = data + 2 -1 + 3
