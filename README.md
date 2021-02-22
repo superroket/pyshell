@@ -20,14 +20,14 @@ linux:
 pip3 install tkinter
 pip3 install tk
 pip3 install ttk
-python3 psh-installer.py
+sudo python3 psh-installer.py
 ```
-windows:
+windows(Run As Admin):
 ```batch
 python psh-installer.py
 ```
 mac:
 ```bash
-python psh-installer.py
+sudo python psh-installer.py
 ```
 
