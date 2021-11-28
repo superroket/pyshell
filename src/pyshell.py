@@ -37,9 +37,9 @@ os.chdir(home)
 while True:
 	if prodef:
 		if os.getcwd() == home:
-				pro = f"\u001b[32m{getpass.getuser()}@{platform.node()}\u001b[31m:{re.sub(home,'~',os.getcwd())}$"
+				pro = f"\u001b[32m{getpass.getuser()}@{platform.node()}\u001b[33m:\u001b[34m{re.sub(home,'~',os.getcwd())}\u001b[33m$ "
 		else:
-			pro = f"\u001b[32m{getpass.getuser()}@{platform.node()}\u001b[31m:{os.getcwd()}$"
+			pro = f"\u001b[32m{getpass.getuser()}@{platform.node()}\u001b[33m:\u001b[34m{os.getcwd()}\u001b[33m$ "
 	try:
 		cmd = input(pro)
 	except KeyboardInterrupt:
