@@ -15,14 +15,17 @@ elif platform.system() == "Darwin":
 	pass
 elif platform.system() == "Windows":
 	win=True
-
-with open("settings.json") as settings_file:
-	settings = json.load(settings_file)
-	pro = settings["prompt"]
-	if pro == "$PRO":
-		prodef = True
-	home = settings["home"]
-cmd = ""
+try:
+	with open("settings.json") as settings_file:
+		settings = json.load(settings_file)
+		pro = settings["prompt"]
+		if pro == "$PRO":
+			prodef = True
+		home = settings["home"]
+	cmd = ""
+except FileNotFoundError:
+	print(f"\33[31mPyShell: settings.json not Found\033[0m")
+	exit()
 
 if win == False:
 	os.system("clear")
