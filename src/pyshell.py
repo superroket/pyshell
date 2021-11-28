@@ -4,6 +4,8 @@ import getpass
 import json
 import re
 import os
+import colorama; colorama.init()
+
 win = False
 prodef = False
 
@@ -24,30 +26,23 @@ cmd = ""
 
 if win == False:
 	os.system("clear")
-	print("Welcome To The \33[34mPyt\33[93mhon\033[0m Shell v1.2.2")
 else:
 	os.system("cls")
-	print("Welcome To The Python Shell v1.2.2")
+print("Welcome To The \33[34mPyt\33[93mhon\033[0m Shell v1.2.3")
 os.chdir(home)
 
 while True:
 	if prodef:
 		if os.getcwd() == home:
-			if re.search("^" + home, os.getcwd()):
-				pro = getpass.getuser() + "@" + platform.node() + ":" + re.sub(home,"~",os.getcwd()) + "$ "
-			else:		
-				pro = getpass.getuser() + "@" + platform.node() + ":"+ "~" + "$ "
+				pro = f"\u001b[32m{getpass.getuser()}@{platform.node()}\u001b[31m:{re.sub(home,'~',os.getcwd())}$"
 		else:
-			pro = getpass.getuser() + "@" + platform.node() + ":"+ os.getcwd() + "$ "
+			pro = f"\u001b[32m{getpass.getuser()}@{platform.node()}\u001b[31m:{os.getcwd()}$"
 	try:
 		cmd = input(pro)
 	except KeyboardInterrupt:
 		print("^C")
 	except EOFError:
-		if win == False:
-			print("\33[31mPyShell: " + cmd + ": Unkown Error\033[0m")
-		else:
-			print("PyShell: " + cmd + ": Unkown Error")
+			print(f"\33[31mPyShell: {cmd} : Unkown Error\033[0m")
 	if cmd != "exit":
 		if re.split("\s",cmd)[0] != "cd":
 			try:
@@ -64,23 +59,18 @@ while True:
 						code = compile(text,cmd,"exec")
 						exec(text,{})
 				else:
-					if win == False:
-						print("\33[31mPyShell: " + cmd + ": Command Not Found\033[0m")
+					print("\33[31mPyShell: " + cmd + ": Command Not Found\033[0m")
 			except PermissionError:
-				if win == False:
-					print("\33[31mPyShell: " + cmd + ": Access Denied\033[0m")
+				print("\33[31mPyShell: " + cmd + ": Access Denied\033[0m")
 			except EOFError:
-				try:
+				wtry:
 					if win == False:
 						process = subprocess.run(re.split("\s", cmd))
 						print(str(process.stdout).rstrip("None").rstrip(""))
 					else:
 						os.system(cmd)
 				except EOFError:
-					if win == False:
-						print("\33[31mPyShell: " + cmd + ": Unkown Error\003[0m")
-					else:
-						print("PyShell: " + cmd + ": Unkown Error")
+					print("\33[31mPyShell: " + cmd + ": Unkown Error\003[0m")
 		else:
 			try:
 				os.chdir(re.split("\s",cmd)[1])
