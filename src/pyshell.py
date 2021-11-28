@@ -63,7 +63,7 @@ while True:
 			except PermissionError:
 				print("\33[31mPyShell: " + cmd + ": Access Denied\033[0m")
 			except EOFError:
-				wtry:
+				try:
 					if win == False:
 						process = subprocess.run(re.split("\s", cmd))
 						print(str(process.stdout).rstrip("None").rstrip(""))
