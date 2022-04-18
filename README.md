@@ -1,6 +1,8 @@
 # pyshell
 #### A Shell For All
 
+[![CodeQL](https://github.com/harsha7addanki/pyshell/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)](https://github.com/harsha7addanki/pyshell/actions/workflows/codeql-analysis.yml)
+
 # Requirements
 * Your Device Needs The Latest Version Python
 * Tkinter Is Needed On Linux
