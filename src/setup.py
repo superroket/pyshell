@@ -1,1 +1,1 @@
-os.mkdir("pyshell-exp")
+os.mkdir("pybin")
